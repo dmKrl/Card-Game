@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'stratosskyeng';
+  src: url('/fonts/statosskyeng-v1.001/Desktop\ fonts/statosskyeng-v1');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+c
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  background: var(--blue-120, #004980);
+}
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 1024px;
+  height: 774px;
+  padding: 158px 272px 157px 272px;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #c2f5ff;
+
+  width: 480px;
+  height: 459px;
+  border-radius: 12px;
+  &-buttons {
+    display: flex;
+    gap: 26px;
+    margin-top: 48px;
+  }
+  &-button {
+    text-align: center;
+    background: #fff;
+
+    width: 96px;
+    height: 98px;
+    border-radius: 12px;
+    color: var(--blue-100, #0080c1);
+    font-family: 'StratosSkyeng';
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 72px;
+    transition: all 0.2s;
+    &:hover {
+      transform: scale(1.05);
+      background-color: #d5ff8c;
+    }
+  }
+  &-start {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--salad-60, #7ac100);
+
+    border-radius: 12px;
+    margin-top: 67px;
+    width: 246px;
+    height: 48px;
+    color: #fff;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: StratosSkyeng;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+  }
+}
