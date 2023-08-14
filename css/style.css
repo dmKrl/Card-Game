@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "stratosskyeng";
-  src: url("/fonts/statosskyeng-v1.001/Desktop fonts/statosskyeng-v1");
+  font-family: "StratosSkyeng";
+  src: url("/fonts/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff") format("woff"), url("/fonts/statosskyeng-v1.001/Web fonts/stratosskyengweb-light.woff") format("woff"), url("/fonts/statosskyeng-v1.001/Web fonts/stratosskyengweb-medium.woff") format("woff"), url("/fonts/statosskyeng-v1.001/Web fonts/stratosskyengweb-medium.woff") format("woff"), url("/fonts/statosskyeng-v1.001/Web fonts/stratosskyengweb-medium.woff") format("woff");
 }
 * {
   margin: 0;
@@ -8,20 +8,20 @@
   box-sizing: border-box;
 }
 
-c button {
+button {
   border: none;
   cursor: pointer;
 }
 
 body {
   background: var(--blue-120, #004980);
+  font-family: "StratosSkyeng";
 }
 
 .app {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1024px;
   height: 774px;
   padding: 158px 272px 157px 272px;
 }
@@ -35,6 +35,17 @@ body {
   width: 480px;
   height: 459px;
   border-radius: 12px;
+}
+.main-text {
+  width: 208px;
+  color: #004980;
+  text-align: center;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: "StratosSkyeng";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px;
 }
 .main-buttons {
   display: flex;
@@ -76,4 +87,9 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 32px;
+  transition: all 0.2s;
+}
+.main-start:hover {
+  transform: scale(1.02);
+  background-color: rgba(164, 201, 99, 0.6078431373);
 }/*# sourceMappingURL=style.css.map */
