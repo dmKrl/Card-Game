@@ -2,18 +2,30 @@ const app = document.querySelector('.app');
 
 function renderMainPage() {
   const mainPageHtml = `
-  <main class="main">
+  <form class="main">
   <p class="main-text">Выберите сложность</p>
-  <div class="main-buttons">
-    <button class="main-button main-button-1">1</button>
-    <button class="main-button main-button-2">2</button>
-    <button class="main-button main-button-3">3</button>
+  <div class="main-checbox">
+      <input type="radio" id="es" name="difficulty" /><label
+        for="es"
+        class="main-checbox-text"
+        >1</label
+      >
+      <input type="radio" id="medium" name="difficulty" /><label
+        for="medium"
+        class="main-checbox-text"
+        >2</label
+      >
+      <input type="radio" id="hard" name="difficulty" /><label
+        for="hard"
+        class="main-checbox-text"
+        >3</label
+      >
   </div>
   <button class="main-start">Старт</button>
-</main>
+</form>
 `;
 
   app.innerHTML = mainPageHtml;
 }
 
-export { renderMainPage }
+export { renderMainPage };

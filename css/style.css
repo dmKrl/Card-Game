@@ -1,6 +1,6 @@
 @font-face {
   font-family: "StratosSkyeng";
-  src: url("/fonts/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff") format("woff"), url("/fonts/statosskyeng-v1.001/Web fonts/stratosskyengweb-light.woff") format("woff"), url("/fonts/statosskyeng-v1.001/Web fonts/stratosskyengweb-medium.woff") format("woff");
+  src: url("/fonts/stratosskyengweb-regular.woff") format("woff");
 }
 * {
   margin: 0;
@@ -41,20 +41,32 @@ body {
   color: #004980;
   text-align: center;
   font-variant-numeric: lining-nums proportional-nums;
-  font-family: "StratosSkyeng";
+  font-family: StratosSkyeng;
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
   line-height: 48px;
 }
-.main-buttons {
+.main-checbox {
   display: flex;
   gap: 26px;
   margin-top: 48px;
 }
-.main-button {
+.main-checbox-text {
+  color: var(--blue-100, #0080c1);
   text-align: center;
+  font-family: StratosSkyeng;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 72px;
+}
+.main-checbox label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #fff;
+  cursor: pointer;
   width: 96px;
   height: 98px;
   border-radius: 12px;
@@ -66,8 +78,15 @@ body {
   line-height: 72px;
   transition: all 0.2s;
 }
-.main-button:hover {
+.main-checbox label:hover {
   transform: scale(1.05);
+  background-color: #d5ff8c;
+}
+.main-checbox input[type=radio] {
+  position: absolute;
+  display: none;
+}
+.main-checbox input[type=radio]:checked + label {
   background-color: #d5ff8c;
 }
 .main-start {
