@@ -10,23 +10,43 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./components/renderGamePage.js":
+/*!**************************************!*\
+  !*** ./components/renderGamePage.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _renderPageSelectedDifficulty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./renderPageSelectedDifficulty */ \"./components/renderPageSelectedDifficulty.js\");\n\r\n\r\nfunction renderGamePage(levelDifficulty) {\r\n  (0,_renderPageSelectedDifficulty__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(levelDifficulty);\r\n\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (renderGamePage);\n\n//# sourceURL=webpack://fourth-module/./components/renderGamePage.js?");
+
+/***/ }),
+
+/***/ "./components/renderMainPage.js":
+/*!**************************************!*\
+  !*** ./components/renderMainPage.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   renderMainPage: () => (/* binding */ renderMainPage)\n/* harmony export */ });\n/* harmony import */ var _renderGamePage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./renderGamePage.js */ \"./components/renderGamePage.js\");\n\nconst app = document.querySelector('.app');\n\nfunction renderMainPage() {\n  const mainPageHtml = `\n<div class=\"main\">\n  <p class=\"main-text\">Выберите сложность</p>\n  <div class=\"main-checbox\">\n      <input type=\"radio\" id=\"es\" name=\"difficulty\"/><label\n        for=\"es\"\n        class=\"main-checbox-text\"\n        >1</label\n      >\n      <input type=\"radio\" id=\"medium\" name=\"difficulty\" /><label\n        for=\"medium\"\n        class=\"main-checbox-text\"\n        >2</label\n      >\n      <input type=\"radio\" id=\"hard\" name=\"difficulty\" /><label\n        for=\"hard\"\n        class=\"main-checbox-text\"\n        >3</label\n      >\n  </div>\n  <button class=\"main-start\">Старт</button>\n</div>\n`;\n  app.innerHTML = mainPageHtml;\n  const boxSelectedDifficulty = document.querySelector('.main');\n\n  boxSelectedDifficulty.addEventListener('click', (event) => {\n    const target = event.target;\n    if (target.closest('.main-checbox-text')) {\n      localStorage.setItem('checked', target.getAttribute('for'));\n    }\n    if (target.closest('.main-start')) {\n      let levelDifficulty = localStorage.getItem('checked');\n      (0,_renderGamePage_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(levelDifficulty);\n    }\n  });\n}\n\n\n\n\n//# sourceURL=webpack://fourth-module/./components/renderMainPage.js?");
+
+/***/ }),
+
+/***/ "./components/renderPageSelectedDifficulty.js":
+/*!****************************************************!*\
+  !*** ./components/renderPageSelectedDifficulty.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst app = document.querySelector('.app');\r\n\r\nfunction renderPageSelectedDifficulty(levelDifficulty) {\r\n  if (levelDifficulty === 'es') {\r\n    const gamePageHtml = `\r\n        <div class=\"game\">\r\n        <label\r\n        for=\"es\"\r\n        class=\"main-checbox-text\"\r\n        >EASY</label\r\n      >\r\n        </div>\r\n        `;\r\n    app.innerHTML = gamePageHtml;\r\n  }\r\n  if (levelDifficulty === 'medium') {\r\n    const gamePageHtml = `\r\n        <div class=\"game\">\r\n        <label\r\n        for=\"medium\"\r\n        class=\"main-checbox-text\"\r\n        >MEDIUM</label\r\n      >\r\n        </div>\r\n        `;\r\n    app.innerHTML = gamePageHtml;\r\n  }\r\n  if (levelDifficulty === 'hard') {\r\n    const gamePageHtml = `\r\n        <div class=\"game\">\r\n        <label\r\n        for=\"hard\"\r\n        class=\"main-checbox-text\"\r\n        >HARD</label\r\n      >\r\n        </div>\r\n        `;\r\n    app.innerHTML = gamePageHtml;\r\n  }\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (renderPageSelectedDifficulty);\r\n\n\n//# sourceURL=webpack://fourth-module/./components/renderPageSelectedDifficulty.js?");
+
+/***/ }),
+
 /***/ "./index.js":
 /*!******************!*\
   !*** ./index.js ***!
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _src_components_renderMainPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./src/components/renderMainPage */ \"./src/components/renderMainPage.js\");\n\r\n\r\n(0,_src_components_renderMainPage__WEBPACK_IMPORTED_MODULE_0__.renderMainPage)();\r\n\n\n//# sourceURL=webpack://fourth-module/./index.js?");
-
-/***/ }),
-
-/***/ "./src/components/renderMainPage.js":
-/*!******************************************!*\
-  !*** ./src/components/renderMainPage.js ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   renderMainPage: () => (/* binding */ renderMainPage)\n/* harmony export */ });\nconst app = document.querySelector('.app');\r\n\r\nfunction renderMainPage() {\r\n  const mainPageHtml = `\r\n  <form class=\"main\">\r\n  <p class=\"main-text\">Выберите сложность</p>\r\n  <div class=\"main-checbox\">\r\n      <input type=\"radio\" id=\"es\" name=\"difficulty\" /><label\r\n        for=\"es\"\r\n        class=\"main-text\"\r\n        >1</label\r\n      >\r\n      <input type=\"radio\" id=\"medium\" name=\"difficulty\" /><label\r\n        for=\"medium\"\r\n        class=\"main-text\"\r\n        >2</label\r\n      >\r\n      <input type=\"radio\" id=\"hard\" name=\"difficulty\" /><label\r\n        for=\"hard\"\r\n        class=\"main-text\"\r\n        >3</label\r\n      >\r\n  </div>\r\n  <button class=\"main-start\">Старт</button>\r\n</form>\r\n`;\r\n\r\n  app.innerHTML = mainPageHtml;\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack://fourth-module/./src/components/renderMainPage.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_renderMainPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/renderMainPage */ \"./components/renderMainPage.js\");\n\n\n(0,_components_renderMainPage__WEBPACK_IMPORTED_MODULE_0__.renderMainPage)();\n\n\n//# sourceURL=webpack://fourth-module/./index.js?");
 
 /***/ })
 

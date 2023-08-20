@@ -1,3 +1,3 @@
-import { renderMainPage } from './src/components/renderMainPage';
+import { renderMainPage } from './components/renderMainPage';
 
 renderMainPage();
