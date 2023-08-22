@@ -1,8 +1,7 @@
-import renderPageSelectedDifficulty from "./renderPageSelectedDifficulty";
+import renderPageSelectedDifficulty from './renderPageSelectedDifficulty';
 
 function renderGamePage(levelDifficulty) {
   renderPageSelectedDifficulty(levelDifficulty);
-
 }
 
-export default renderGamePage
+export default renderGamePage;
