@@ -7,8 +7,8 @@ function renderMainPage() {
   <div class="main">
     <p class="main-text">Выберите сложность</p>
     <div class="main-checbox">
-        <input type="radio" id="es" name="difficulty"/><label
-          for="es"
+        <input type="radio" id="easy" name="difficulty"/><label
+          for="easy"
           class="main-checbox-text"
           >1</label
         >

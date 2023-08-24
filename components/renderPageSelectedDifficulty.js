@@ -1,23 +1,22 @@
-import renderEasyLevel from './levelsDifficulty/easyLevel';
-import renderHardLevel from './levelsDifficulty/hardLevel';
-import renderMediumLevel from './levelsDifficulty/mediumLevel';
+import renderPagesLevels from './renderPagesLevels';
 
 const app = document.querySelector('.app');
-const game = document.querySelector('.game');
-const gameField = game.content.querySelector('.game-field');
+const template = document.querySelector('.game');
+const gameField = template.content.querySelector('.game-field');
 console.log(gameField);
 
 function renderPageSelectedDifficulty(levelDifficulty) {
-  console.log(levelDifficulty);
+  app.innerHTML = '';
+  const quantityCardsInLevel = [6, 12, 18];
   switch (levelDifficulty) {
-    case 'es':
-      renderEasyLevel(app);
+    case 'easy':
+      renderPagesLevels(app, quantityCardsInLevel[0], levelDifficulty);
       break;
     case 'medium':
-      renderMediumLevel(app);
+      renderPagesLevels(app, quantityCardsInLevel[1], levelDifficulty);
       break;
     case 'hard':
-      renderHardLevel(app);
+      renderPagesLevels(app, quantityCardsInLevel[2], levelDifficulty);
       break;
     default:
       break;
