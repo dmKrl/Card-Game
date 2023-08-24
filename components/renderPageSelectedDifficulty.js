@@ -1,41 +1,26 @@
+import renderEasyLevel from './levelsDifficulty/easyLevel';
+import renderHardLevel from './levelsDifficulty/hardLevel';
+import renderMediumLevel from './levelsDifficulty/mediumLevel';
+
 const app = document.querySelector('.app');
+const game = document.querySelector('.game');
+const gameField = game.content.querySelector('.game-field');
+console.log(gameField);
 
 function renderPageSelectedDifficulty(levelDifficulty) {
-  if (levelDifficulty === 'es') {
-    const gamePageHtml = `
-        <div class="game">
-        <label
-        for="es"
-        class="main-checbox-text"
-        >EASY</label
-      >
-        </div>
-        `;
-    app.innerHTML = gamePageHtml;
-  }
-  if (levelDifficulty === 'medium') {
-    const gamePageHtml = `
-        <div class="game">
-        <label
-        for="medium"
-        class="main-checbox-text"
-        >MEDIUM</label
-      >
-        </div>
-        `;
-    app.innerHTML = gamePageHtml;
-  }
-  if (levelDifficulty === 'hard') {
-    const gamePageHtml = `
-        <div class="game">
-        <label
-        for="hard"
-        class="main-checbox-text"
-        >HARD</label
-      >
-        </div>
-        `;
-    app.innerHTML = gamePageHtml;
+  console.log(levelDifficulty);
+  switch (levelDifficulty) {
+    case 'es':
+      renderEasyLevel(app);
+      break;
+    case 'medium':
+      renderMediumLevel(app);
+      break;
+    case 'hard':
+      renderHardLevel(app);
+      break;
+    default:
+      break;
   }
 }
 

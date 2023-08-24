@@ -19,12 +19,43 @@ body {
   font-family: Stratos;
 }
 
-.app {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 774px;
   padding: 158px 272px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 22px;
+  padding-bottom: 46px;
+  &-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+  }
+  &-text {
+    color: #fff;
+    font-family: Stratos;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-style: normal;
+    font-weight: 400;
+    &-count {
+      font-size: 64px;
+      line-height: 72px;
+    }
+  }
+  &-text span {
+    font-size: 16px;
+    line-height: 32px;
+    vertical-align: 3.8em;
+    margin-left: -1.8em;
+  }
 }
 
 .main {
@@ -96,29 +127,74 @@ body {
   &-checbox input[type='radio']:checked + label {
     background-color: #d5ff8c;
   }
+}
 
-  &-start {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: var(--salad-60, #7ac100);
+.button-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--salad-60, #7ac100);
+  border-radius: 12px;
+  margin-top: 67px;
+  width: 246px;
+  height: 48px;
+  color: #fff;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: Stratos;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+  transition: all 0.2s;
+  &-again {
+    margin: 0;
+  }
+  &:hover {
+    transform: scale(1.02);
+    background-color: #a4c9639b;
+  }
+}
+
+.card {
+  width: 95px;
+  height: 133px;
+  cursor: pointer;
+  &-shirt {
+    background-image: url(/image/cardShirt.png);
+    background-repeat: no-repeat;
+  }
+}
+
+.level {
+  display: flex;
+  justify-content: center;
+  &-card {
+    width: 95px;
+    height: 133px;
     border-radius: 12px;
-    margin-top: 67px;
-    width: 246px;
-    height: 48px;
-    color: #fff;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: Stratos;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 32px;
-    transition: all 0.2s;
-
+    cursor: pointer;
+    transition: all 0.4s;
     &:hover {
       transform: scale(1.02);
-      background-color: #a4c9639b;
+      box-shadow: 0 0 10px #a7cce5;
     }
+    &-shirt {
+      background-image: url(/image/cardShirt.png);
+      background-repeat: no-repeat;
+    }
+  }
+  &-value {
+    display: grid;
+    grid-gap: 20px;
+  }
+  &-easy {
+    grid-template-columns: repeat(3, 12fr);
+  }
+  &-medium {
+    grid-template-columns: repeat(6, 12fr);
+  }
+  &-hard {
+    grid-template-columns: repeat(9, 12fr);
   }
 }
