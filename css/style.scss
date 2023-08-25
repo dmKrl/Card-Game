@@ -33,23 +33,27 @@ body {
   justify-content: center;
   padding-top: 22px;
   padding-bottom: 46px;
+
   &-box {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 90%;
   }
+
   &-text {
     color: #fff;
     font-family: Stratos;
     font-variant-numeric: lining-nums proportional-nums;
     font-style: normal;
     font-weight: 400;
+
     &-count {
       font-size: 64px;
       line-height: 72px;
     }
   }
+
   &-text span {
     font-size: 16px;
     line-height: 32px;
@@ -147,7 +151,7 @@ body {
   font-weight: 400;
   line-height: 32px;
   transition: all 0.2s;
-  
+
   &-again {
     margin: 0;
   }
@@ -164,7 +168,7 @@ body {
   cursor: pointer;
 
   &-shirt {
-    background-image: url(/image/cardShirt.png);
+    background-image: url('/image/cardShirt.png');
     background-repeat: no-repeat;
   }
 }
@@ -172,6 +176,7 @@ body {
 .level {
   display: flex;
   justify-content: center;
+
   &-card {
     width: 95px;
     height: 133px;
@@ -183,9 +188,9 @@ body {
       transform: scale(1.02);
       box-shadow: 0 0 10px #a7cce5;
     }
-    
+
     &-shirt {
-      background-image: url(/image/cardShirt.png);
+      background-image: url('/image/cardShirt.png');
       background-repeat: no-repeat;
     }
   }
@@ -206,5 +211,4 @@ body {
   &-hard {
     grid-template-columns: repeat(9, 12fr);
   }
-
 }

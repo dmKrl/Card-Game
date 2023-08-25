@@ -1,9 +1,6 @@
 import renderPagesLevels from './renderPagesLevels';
 
 const app = document.querySelector('.app');
-const template = document.querySelector('.game');
-const gameField = template.content.querySelector('.game-field');
-console.log(gameField);
 
 function renderPageSelectedDifficulty(levelDifficulty) {
   app.innerHTML = '';
