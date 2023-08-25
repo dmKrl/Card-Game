@@ -1,41 +1,22 @@
+import renderPagesLevels from './renderPagesLevels';
+
 const app = document.querySelector('.app');
 
 function renderPageSelectedDifficulty(levelDifficulty) {
-  if (levelDifficulty === 'es') {
-    const gamePageHtml = `
-        <div class="game">
-        <label
-        for="es"
-        class="main-checbox-text"
-        >EASY</label
-      >
-        </div>
-        `;
-    app.innerHTML = gamePageHtml;
-  }
-  if (levelDifficulty === 'medium') {
-    const gamePageHtml = `
-        <div class="game">
-        <label
-        for="medium"
-        class="main-checbox-text"
-        >MEDIUM</label
-      >
-        </div>
-        `;
-    app.innerHTML = gamePageHtml;
-  }
-  if (levelDifficulty === 'hard') {
-    const gamePageHtml = `
-        <div class="game">
-        <label
-        for="hard"
-        class="main-checbox-text"
-        >HARD</label
-      >
-        </div>
-        `;
-    app.innerHTML = gamePageHtml;
+  app.innerHTML = '';
+  const quantityCardsInLevel = [6, 12, 18];
+  switch (levelDifficulty) {
+    case 'easy':
+      renderPagesLevels(app, quantityCardsInLevel[0], levelDifficulty);
+      break;
+    case 'medium':
+      renderPagesLevels(app, quantityCardsInLevel[1], levelDifficulty);
+      break;
+    case 'hard':
+      renderPagesLevels(app, quantityCardsInLevel[2], levelDifficulty);
+      break;
+    default:
+      break;
   }
 }
 
