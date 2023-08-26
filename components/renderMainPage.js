@@ -30,7 +30,6 @@ function renderMainPage() {
 `;
   app.innerHTML = mainPageHtml;
   const boxSelectedDifficulty = document.querySelector('.main');
-Ы
   boxSelectedDifficulty.addEventListener('click', (event) => {
     const target = event.target;
     if (target.closest('.main-checbox-text')) {
