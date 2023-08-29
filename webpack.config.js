@@ -35,7 +35,7 @@ module.exports = {
     process.env.NODE_ENV === 'production' ? 'hidden-source-map' : 'source-map',
   plugins: [
     new CopyPlugin({
-      patterns: [{ from: 'image', to: 'image' }],
+      patterns: [{ from: 'static', to: 'static' }],
     }),
     new HtmlWebpackPlugin({
       template: './index.html',

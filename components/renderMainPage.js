@@ -1,7 +1,9 @@
 import renderGamePage from './renderGamePage.js';
 const app = document.querySelector('.app');
+const header = document.querySelector('header');
 
 function renderMainPage() {
+  header.innerHTML = '';
   const mainPageHtml = `
 <div class="container">
   <div class="main">
