@@ -28,7 +28,7 @@ function renderPagesLevels(app, quantityCardsInLevel, levelDifficulty) {
 
 function handlerCards(cards) {
   const generatedArrCards = [];
-  const counter = [];
+  const comparisonValuesCards = [];
   setTimeout(() => {
     const findDup = findDuplicates(generatedArrCards);
     findDup.length === 0 ? handlerCards(cards) : false;
@@ -52,13 +52,19 @@ function handlerCards(cards) {
     card.addEventListener('click', () => {
       card.classList.toggle('level-open');
       card.style.backgroundImage = `url(${generatedRandomCardImages})`;
-      counter.push(card.style.backgroundImage);
+      comparisonValuesCards.push(card.style.backgroundImage);
       setTimeout(() => {
-        if (counter.length === 2 && counter[0] === counter[1]) {
+        if (
+          comparisonValuesCards.length === 2 &&
+          comparisonValuesCards[0] === comparisonValuesCards[1]
+        ) {
           alert('Ты выиграл');
           renderMainPage();
         }
-        if (counter.length === 2 && counter[0] !== counter[1]) {
+        if (
+          comparisonValuesCards.length === 2 &&
+          comparisonValuesCards[0] !== comparisonValuesCards[1]
+        ) {
           alert('Ты проиграл');
           renderMainPage();
         }

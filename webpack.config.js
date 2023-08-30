@@ -29,6 +29,11 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
     ],
   },
   devtool:
@@ -42,6 +47,9 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
   ],
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
   optimization: {
     minimize: true,
     minimizer: ['...', new CssMinimizerPlugin()],
