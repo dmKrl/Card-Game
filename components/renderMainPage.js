@@ -28,7 +28,6 @@ function renderMainPage() {
     <button class="button-start">Старт</button>
   </div>
 </div>
-
 `;
   app.innerHTML = mainPageHtml;
   const boxSelectedDifficulty = document.querySelector('.main');

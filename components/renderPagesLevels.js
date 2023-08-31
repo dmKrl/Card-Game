@@ -1,8 +1,11 @@
+import Timer from 'easytimer.js';
 import genetationRandomCard from './genetationRandomCard';
-import { renderMainPage } from './renderMainPage';
+import renderResultPage from './renderResultPage';
 const template = document.querySelector('.game');
 
 function renderPagesLevels(app, quantityCardsInLevel, levelDifficulty) {
+  const timer = new Timer();
+  const headerTimer = document.querySelector('.header-text');
   app.innerHTML = `
   <div class="level">      
     <div class="level-value">
@@ -12,6 +15,8 @@ function renderPagesLevels(app, quantityCardsInLevel, levelDifficulty) {
   levelValue.classList.add(`level-${levelDifficulty}`);
 
   let index = 0;
+
+  // Цикл разметки поля с карточками, в зависимости от уровня сложности
   do {
     const clone = template.content.cloneNode(true);
     let levelCard = clone.querySelector('.level-card');
@@ -23,10 +28,11 @@ function renderPagesLevels(app, quantityCardsInLevel, levelDifficulty) {
   const NodeListCards = document.querySelectorAll('.level-card');
   const cards = Array.from(NodeListCards);
 
-  handlerCards(cards);
+  handlerCards(cards, timer, headerTimer);
 }
 
-function handlerCards(cards) {
+// Логика карточной игры
+function handlerCards(cards, timer, headerTimer) {
   const generatedArrCards = [];
   const comparisonValuesCards = [];
   setTimeout(() => {
@@ -35,8 +41,8 @@ function handlerCards(cards) {
   }, 100);
 
   cards.map((card) => {
-    card.classList.toggle('level-open');
     const generatedRandomCardImages = genetationRandomCard();
+    card.classList.toggle('level-open');
     generationArrIdentificalElements(
       generatedRandomCardImages,
       generatedArrCards,
@@ -44,36 +50,42 @@ function handlerCards(cards) {
 
     card.style.backgroundImage = `url(${generatedRandomCardImages})`;
 
+    // Старт игры
     setTimeout(() => {
       card.classList.toggle('level-open');
       card.style.backgroundImage = `url(${'/static/image/cardShirt.png'})`;
+      timer.start();
+      timer.addEventListener('secondsUpdated', function () {
+        headerTimer.innerHTML = timer.getTimeValues().toString();
+      });
     }, 5000);
 
     card.addEventListener('click', () => {
       card.classList.toggle('level-open');
       card.style.backgroundImage = `url(${generatedRandomCardImages})`;
       comparisonValuesCards.push(card.style.backgroundImage);
+      const headerTimerValue = headerTimer.textContent;
       setTimeout(() => {
         if (
           comparisonValuesCards.length === 2 &&
           comparisonValuesCards[0] === comparisonValuesCards[1]
         ) {
-          alert('Ты выиграл');
-          renderMainPage();
+          timer.stop();
+          renderResultPage(comparisonValuesCards, headerTimerValue);
         }
         if (
           comparisonValuesCards.length === 2 &&
           comparisonValuesCards[0] !== comparisonValuesCards[1]
         ) {
-          alert('Ты проиграл');
-          renderMainPage();
+          timer.stop();
+          renderResultPage(comparisonValuesCards, headerTimerValue);
         }
       }, 100);
     });
   });
 }
 
-// функция генерации массива
+// функция генерации массива, для логики сравнения карточек
 function generationArrIdentificalElements(
   generatedRandomCardImages,
   generatedArrCards,
