@@ -1,47 +1,57 @@
 import Timer from 'easytimer.js';
-import genetationRandomCard from './genetationRandomCard';
+import generationRandomCard from './generationRandomCard';
 import renderResultPage from './renderResultPage';
-const template = document.querySelector('.game');
+const template = document.querySelector('.game') as HTMLTemplateElement;
 
-function renderPagesLevels(app, quantityCardsInLevel, levelDifficulty) {
-  const timer = new Timer();
-  const headerTimer = document.querySelector('.header-text');
+function renderPagesLevels(
+  app: HTMLDivElement,
+  quantityCardsInLevel: number,
+  levelDifficulty: string,
+) {
+  const timer: Timer = new Timer();
+  const headerTimer = document.querySelector(
+    '.header-text',
+  ) as HTMLParagraphElement;
   app.innerHTML = `
   <div class="level">      
     <div class="level-value">
     </div>
   </div>`;
-  const levelValue = document.querySelector('.level-value');
+  const levelValue = document.querySelector('.level-value') as HTMLDivElement;
   levelValue.classList.add(`level-${levelDifficulty}`);
 
   let index = 0;
 
   // Цикл разметки поля с карточками, в зависимости от уровня сложности
   do {
-    const clone = template.content.cloneNode(true);
-    let levelCard = clone.querySelector('.level-card');
+    const clone = template.content.cloneNode(true) as HTMLElement;
+    let levelCard = clone.querySelector('.level-card') as HTMLElement;
     levelCard.classList.add('level-card-shirt');
     levelValue.appendChild(clone);
     index++;
   } while (index < quantityCardsInLevel);
 
   const NodeListCards = document.querySelectorAll('.level-card');
-  const cards = Array.from(NodeListCards);
+  const cards = Array.from(NodeListCards) as HTMLElement[];
 
   handlerCards(cards, timer, headerTimer);
 }
 
 // Логика карточной игры
-function handlerCards(cards, timer, headerTimer) {
-  const generatedArrCards = [];
-  const comparisonValuesCards = [];
+function handlerCards(
+  cards: HTMLElement[],
+  timer: Timer,
+  headerTimer: HTMLParagraphElement,
+): void {
+  const generatedArrCards: string[] = [];
+  const comparisonValuesCards: string[] = [];
   setTimeout(() => {
     const findDup = findDuplicates(generatedArrCards);
-    findDup.length === 0 ? handlerCards(cards) : false;
+    findDup.length === 0 ? handlerCards(cards, timer, headerTimer) : false;
   }, 100);
 
   cards.map((card) => {
-    const generatedRandomCardImages = genetationRandomCard();
+    const generatedRandomCardImages: string = generationRandomCard();
     card.classList.toggle('level-open');
     generationArrIdentificalElements(
       generatedRandomCardImages,
@@ -64,7 +74,7 @@ function handlerCards(cards, timer, headerTimer) {
       card.classList.toggle('level-open');
       card.style.backgroundImage = `url(${generatedRandomCardImages})`;
       comparisonValuesCards.push(card.style.backgroundImage);
-      const headerTimerValue = headerTimer.textContent;
+      const headerTimerValue = headerTimer.textContent as string;
       setTimeout(() => {
         if (
           comparisonValuesCards.length === 2 &&
@@ -87,15 +97,15 @@ function handlerCards(cards, timer, headerTimer) {
 
 // функция генерации массива, для логики сравнения карточек
 function generationArrIdentificalElements(
-  generatedRandomCardImages,
-  generatedArrCards,
+  generatedRandomCardImages: string,
+  generatedArrCards: string[],
 ) {
   generatedArrCards.push(generatedRandomCardImages);
   return generatedArrCards;
 }
 
 // Функция поиска одинаковых элементов в массиве
-function findDuplicates(arr) {
+function findDuplicates(arr: string[]) {
   const arrDup = arr.filter((item, index) => arr.indexOf(item) !== index);
   return arrDup;
 }

@@ -1,4 +1,4 @@
-const cards = [
+const cards: string[] = [
   './static/image/sixHearts.png',
   './static/image/sevenHearts.png',
   './static/image/eightHearts.png',
@@ -36,9 +36,9 @@ const cards = [
   './static/image/kingSpades.png',
   './static/image/aceOfSpades.png',
 ];
-function genetationRandomCard() {
+function generationRandomCard() {
   const randomCard = Math.floor(Math.random() * 35);
   return cards[randomCard];
 }
 
-export default genetationRandomCard;
+export default generationRandomCard;

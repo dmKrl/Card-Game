@@ -8,7 +8,7 @@ const mode =
   process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
 module.exports = {
-  entry: './index.js',
+  entry: './index.ts',
   mode,
   output: {
     path: path.resolve(__dirname, 'dist'),

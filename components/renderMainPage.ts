@@ -1,10 +1,10 @@
-import renderGamePage from './renderGamePage.js';
-const app = document.querySelector('.app');
-const header = document.querySelector('header');
+import renderGamePage from './renderGamePage';
+const app = document.querySelector('.app') as HTMLDivElement;
+const header = document.querySelector('.head') as HTMLDivElement;
 
-function renderMainPage() {
+function renderMainPage(): void {
   header.innerHTML = '';
-  const mainPageHtml = `
+  const mainPageHtml: string = `
 <div class="container">
   <div class="main">
     <p class="main-text">Выберите сложность</p>
@@ -30,15 +30,15 @@ function renderMainPage() {
 </div>
 `;
   app.innerHTML = mainPageHtml;
-  const boxSelectedDifficulty = document.querySelector('.main');
-  boxSelectedDifficulty.addEventListener('click', (event) => {
-    const target = event.target;
-    if (target.closest('.main-checbox-text')) {
-      localStorage.setItem('checked', target.getAttribute('for'));
+  const boxSelectedDifficulty = document.querySelector('.main') as HTMLDivElement;
+  boxSelectedDifficulty.addEventListener('click', (e: Event) => {
+    const target = e.target as HTMLElement;
+    if (target.closest('.main-checbox-text') as HTMLLabelElement) {
+      localStorage.setItem('checked', target.getAttribute('for') as string);
     }
     if (target.closest('.button-start')) {
       let levelDifficulty = localStorage.getItem('checked');
-      renderGamePage(levelDifficulty);
+      renderGamePage(levelDifficulty as string);
     }
   });
 }

@@ -1,7 +1,7 @@
 import renderHeader from './renderHeader';
 import renderPageSelectedDifficulty from './renderPageSelectedDifficulty';
 
-function renderGamePage(levelDifficulty) {
+function renderGamePage(levelDifficulty: string) {
   renderHeader();
   renderPageSelectedDifficulty(levelDifficulty);
 }
