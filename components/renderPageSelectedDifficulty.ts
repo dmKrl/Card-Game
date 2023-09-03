@@ -1,8 +1,8 @@
 import renderPagesLevels from './renderPagesLevels';
 
-const app = document.querySelector('.app');
+const app = document.querySelector('.app') as HTMLDivElement;
 
-function renderPageSelectedDifficulty(levelDifficulty) {
+function renderPageSelectedDifficulty(levelDifficulty: string): void {
   app.innerHTML = '';
   const quantityCardsInLevel = [6, 12, 18];
   switch (levelDifficulty) {
