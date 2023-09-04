@@ -7,13 +7,25 @@ function renderPageSelectedDifficulty(levelDifficulty: string): void {
   const quantityCardsInLevel = [6, 12, 18];
   switch (levelDifficulty) {
     case 'easy':
-      renderPagesLevels(app, quantityCardsInLevel[0], levelDifficulty);
+      renderPagesLevels(
+        app,
+        quantityCardsInLevel[0] as number,
+        levelDifficulty,
+      );
       break;
     case 'medium':
-      renderPagesLevels(app, quantityCardsInLevel[1], levelDifficulty);
+      renderPagesLevels(
+        app,
+        quantityCardsInLevel[1] as number,
+        levelDifficulty,
+      );
       break;
     case 'hard':
-      renderPagesLevels(app, quantityCardsInLevel[2], levelDifficulty);
+      renderPagesLevels(
+        app,
+        quantityCardsInLevel[2] as number,
+        levelDifficulty,
+      );
       break;
     default:
       break;
