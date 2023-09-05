@@ -39,7 +39,7 @@ function renderMainPage(): void {
       localStorage.setItem('checked', target.getAttribute('for') as string);
     }
     if (target.closest('.button-start')) {
-      let levelDifficulty = localStorage.getItem('checked');
+      const levelDifficulty = localStorage.getItem('checked');
       renderGamePage(levelDifficulty as string);
     }
   });

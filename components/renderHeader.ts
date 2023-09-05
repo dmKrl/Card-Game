@@ -1,6 +1,8 @@
 import { renderMainPage } from './renderMainPage';
 
-const header = document.querySelector('.head') as HTMLDivElement;
+const header: HTMLDivElement = document.querySelector(
+  '.head',
+) as HTMLDivElement;
 function renderHeader() {
   const headerHtml: string = `
   <div class="header">
@@ -10,9 +12,7 @@ function renderHeader() {
   </div>
   <button class="button-start button-start-again">Начать заново</button>
   </div>
-  </div>
-  
-  `;
+  </div>`;
   header.innerHTML = headerHtml;
   const buttonStartAgain = document.querySelector(
     '.button-start-again',

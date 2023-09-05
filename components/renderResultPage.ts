@@ -3,7 +3,10 @@ import { renderMainPage } from './renderMainPage';
 const popup = document.querySelector('.popup') as HTMLDivElement;
 const app = document.querySelector('.app') as HTMLDivElement;
 
-function renderResultPage(ArrayValues: string[], headerTimerValue: string): void {
+function renderResultPage(
+  ArrayValues: string[],
+  headerTimerValue: string,
+): void {
   popup.style.visibility = 'visible';
   popup.style.opacity = '1';
   const mainPageHtml = `
@@ -22,11 +25,11 @@ function renderResultPage(ArrayValues: string[], headerTimerValue: string): void
         <button class="button-start button-start-new">Играть снова</button>
     </div>
   </div>
-  </div>
-  
-  `;
+  </div>`;
   popup.innerHTML = mainPageHtml;
-  const buttonStartNewGame = document.querySelector('.button-start-new') as HTMLButtonElement;
+  const buttonStartNewGame = document.querySelector(
+    '.button-start-new',
+  ) as HTMLButtonElement;
 
   buttonStartNewGame.addEventListener('click', () => {
     popup.style.visibility = 'hidden';

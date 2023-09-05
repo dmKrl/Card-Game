@@ -37,7 +37,7 @@ const cards: string[] = [
   './static/image/aceOfSpades.png',
 ];
 function generationRandomCard(): string {
-  const randomCard = Math.floor(Math.random() * 35);
+  const randomCard: number = Math.floor(Math.random() * 35);
   return cards[randomCard] as string;
 }
 

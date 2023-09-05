@@ -12,8 +12,7 @@ function renderPagesLevels(
   const headerTimer = document.querySelector(
     '.header-text',
   ) as HTMLParagraphElement;
-  app.innerHTML = `
-  <div class="level">      
+  app.innerHTML = `<div class="level">      
     <div class="level-value">
     </div>
   </div>`;
@@ -25,7 +24,7 @@ function renderPagesLevels(
   // Цикл разметки поля с карточками, в зависимости от уровня сложности
   do {
     const clone = template.content.cloneNode(true) as HTMLElement;
-    let levelCard = clone.querySelector('.level-card') as HTMLElement;
+    const levelCard = clone.querySelector('.level-card') as HTMLElement;
     levelCard.classList.add('level-card-shirt');
     levelValue.appendChild(clone);
     index++;
