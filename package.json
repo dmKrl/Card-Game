@@ -12,7 +12,7 @@
     "lint:js": "eslint ./components",
     "lint:css": "stylelint ./css",
     "lint:ts": "tsc ––noEmit",
-    "lint": "npm run lint:js && npm run lint:css",
+    "lint": "npm run lint:ts && npm run lint:css",
     "prepare": "husky install"
   },
   "author": "",
