@@ -7,6 +7,24 @@
     "target": "es5",
     "allowJs": true,
     "sourceMap": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "declaration": true,
+    "noEmit": false,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
   }
 }

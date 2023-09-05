@@ -36,9 +36,10 @@ const cards: string[] = [
   './static/image/kingSpades.png',
   './static/image/aceOfSpades.png',
 ];
-function generationRandomCard() {
+function generationRandomCard(): string {
   const randomCard = Math.floor(Math.random() * 35);
-  return cards[randomCard];
+  return cards[randomCard] as string;
 }
 
 export default generationRandomCard;
+module.exports = { generationRandomCard, cards };

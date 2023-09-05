@@ -30,7 +30,9 @@ function renderMainPage(): void {
 </div>
 `;
   app.innerHTML = mainPageHtml;
-  const boxSelectedDifficulty = document.querySelector('.main') as HTMLDivElement;
+  const boxSelectedDifficulty = document.querySelector(
+    '.main',
+  ) as HTMLDivElement;
   boxSelectedDifficulty.addEventListener('click', (e: Event) => {
     const target = e.target as HTMLElement;
     if (target.closest('.main-checbox-text') as HTMLLabelElement) {
