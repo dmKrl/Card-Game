@@ -26,6 +26,7 @@
     "easytimer.js": "^4.6.0",
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-prettier": "^5.0.0",
     "html-webpack-plugin": "^5.5.3",
     "husky": "^8.0.3",

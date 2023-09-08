@@ -1,13 +1,16 @@
 {
   "defaultSeverity": "error",
   "extends": ["tslint:recommended"],
+  "plugins": ["prefer-arrow"],
   "rules": {
-    "array-bracket-spacing": [true, "never"],
-    "arrow-parens": false,
+    "func-style": ["error", "expression", { "allowArrowFunctions": true }],
+    "arrow-parens": true,
+    "only-arrow-functions": false,
+    "no-unused-expression": false,
     "class-name": true,
     "curly": true,
     "eofline": true,
-    "import-spacing": true,
+    "import-spacing": false,
     "indent": [true, "spaces", 2],
     "interface-name": [true, "always-prefix"],
     "member-access": true,
@@ -39,6 +42,7 @@
     "semicolon": [true, "always"],
     "triple-equals": [true, "allow-null-check"],
     "variable-name": false,
+    "no-shadowed-variable": false,
     "whitespace": [
       true,
       "check-branch",

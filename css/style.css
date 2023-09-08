@@ -221,11 +221,11 @@ body {
 
 .popup {
   position: fixed;
+  background: rgb(0 0 0 / 90%);
   width: 100%;
   height: 100%;
   opacity: 0;
   visibility: hidden;
-  background: rgb(0 0 0 / 90%);
   top: 0;
   left: 0;
 }

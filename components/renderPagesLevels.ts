@@ -12,10 +12,7 @@ function renderPagesLevels(
   const headerTimer = document.querySelector(
     '.header-text',
   ) as HTMLParagraphElement;
-  app.innerHTML = `<div class="level">      
-    <div class="level-value">
-    </div>
-  </div>`;
+  app.innerHTML = `<div class="level"><div class="level-value"></div></div>`;
   const levelValue = document.querySelector('.level-value') as HTMLDivElement;
   levelValue.classList.add(`level-${levelDifficulty}`);
 

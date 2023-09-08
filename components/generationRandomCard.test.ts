@@ -1,6 +1,5 @@
 import { it, expect } from '@jest/globals';
-const { generationRandomCard, cards } = require('./generationRandomCard');
-
+import generationRandomCard, { cards } from './generationRandomCard';
 it('should generate random cards', () => {
   const cardsArray: string[] = Array.from(cards);
   const generateCard: string = generationRandomCard();

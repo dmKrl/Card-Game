@@ -1,4 +1,4 @@
-const cards: string[] = [
+export const cards: string[] = [
   './static/image/sixHearts.png',
   './static/image/sevenHearts.png',
   './static/image/eightHearts.png',
@@ -42,4 +42,3 @@ function generationRandomCard(): string {
 }
 
 export default generationRandomCard;
-module.exports = { generationRandomCard, cards };
